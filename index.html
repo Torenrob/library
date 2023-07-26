@@ -5,14 +5,37 @@
       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="author" content="Toren Robinson">
+      <title>YourLibrarian</title>
       <meta name="description" content="">
       <script src="script.js" defer="defer"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+      <link rel="stylesheet" href="reset.css">
       <link rel="stylesheet" href="style.css">
       <title>Untitled</title>
    </head>
 
    <body>
-      <div></div>
+      <header>
+         <h1>YourLibrarian</h1>
+         <button type="submit" class="btn btn-light">Add Book +</button>
+      </header>
+      <div id="mainArea">
+         <div class="book">
+            <div>
+               <h3 style="justify-content: center;">Golden Rule</h3>
+               <label class="switch">
+                  <input type="checkbox" name="switch">
+                  <span class="slider"></span>
+                  <span id="unread">UNREAD</span>
+                  <span id="read">READ</span>
+               </label>
+            </div>
+            <span>Lenette Springs</span>
+            <span>395 pages</span>
+         </div>
+      </div>
+      <footer></footer>
    </body>
 
 </html>
