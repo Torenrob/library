@@ -18,9 +18,13 @@
    <body>
       <header>
          <h1>YourLibrarian</h1>
-         <button type="submit" class="btn btn-light">Add Book +</button>
+         <button type="submit" id="addBookBtn" class="btn btn-light">Add Book +</button>
       </header>
       <div id="mainArea">
+         <form id="addBookForm">
+            <label for="bookTitle">Book Title:</label>
+               <input type="text" name="bookTitle" id="bookTitle">
+         </form>       
          <div class="book">
             <div>
                <h3 style="justify-content: center;">Golden Rule</h3>
@@ -31,11 +35,11 @@
                   <span id="read">READ</span>
                </label>
             </div>
-            <span>Lenette Springs</span>
-            <span>395 pages</span>
+            <span class="bookInfo">Author: <span id="author">Lenette Springs</span></span>
+            <span class="bookInfo">Pages: <span id="pages">395 pages</span></span>
          </div>
       </div>
-      <footer></footer>
+      <footer><span>YourLibrarian &copy Toren Robinson</span></footer>
    </body>
 
 </html>
