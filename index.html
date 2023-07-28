@@ -5,14 +5,12 @@
       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="author" content="Toren Robinson">
-      <title>YourLibrarian</title>
       <meta name="description" content="">
-      <script src="script.js" defer="defer"></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-      <link rel="stylesheet" href="reset.css">
-      <link rel="stylesheet" href="style.css">
-      <title>Untitled</title>
+      <link rel="stylesheet" href="CSS/sassy.css">
+      <link rel="stylesheet" href="CSS/reset.css">
+      <link rel="stylesheet" href="CSS/style.css">
+      <title>YourLibrarian</title>
+      <script src="Scripts/script.js" defer="defer"></script>
    </head>
 
    <body>
@@ -22,9 +20,27 @@
       </header>
       <div id="mainArea">
          <form id="addBookForm">
-            <label for="bookTitle">Book Title:</label>
-               <input type="text" name="bookTitle" id="bookTitle">
-         </form>       
+            <h4 style="color: rgb(68, 67, 67); display: flex; justify-content: center;">Book Information</h4>
+            <div class="input-group mb-3">
+               <label class="input-group-text" for="bookTitle">Book Title:</label>
+               <input class="form-control" type="text" name="bookTitle" id="bookTitle">
+            </div>
+            <div class="input-group mb-3">
+               <label class="input-group-text" for="authorEntry">Author:</label>
+               <input class="form-control" type="text" name="authorEntry" id="authorEntry">
+            </div>
+            <div id="pageReadInput">
+               <div class="input-group mb-3" style="width: 55%;">
+                  <label class="input-group-text" for="pagesEntry">Pages:</label>
+                  <input class="form-control" type="number" name="pagesEntry">
+               </div>
+               <div class="form-check form-check-reverse">
+                  <label for="bookRead" class="form-check-label" style="color: rgb(68, 67, 67);">Already read?</label>
+                  <input type="checkbox" name="bookRead" class="form-check-input" style="cursor: grab;">
+               </div>
+            </div>
+            <button class="btn btn-light" id="submitBookInfo" type="submit">Add Book</button>
+         </form>
          <div class="book">
             <div>
                <h3 style="justify-content: center;">Golden Rule</h3>
@@ -39,7 +55,7 @@
             <span class="bookInfo">Pages: <span id="pages">395 pages</span></span>
          </div>
       </div>
-      <footer><span>YourLibrarian &copy Toren Robinson</span></footer>
+      <footer><span>YourLibrarian &copy 2023 Toren Robinson</span></footer>
    </body>
 
 </html>

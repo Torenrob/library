@@ -1,0 +1,9 @@
+$input-group-addon-bg: rgb(68, 67, 67);
+$input-group-addon-border-color: rgb(51, 50, 50);
+$focus-ring-color: rgba(10, 71, 121, 0.25);
+$form-check-input-checked-bg-color: rgb(10, 71, 121);
+$form-check-input-focus-border: rgba(10, 71, 121);
+$input-focus-border-color: rgba(10, 71, 121);
+
+//import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
