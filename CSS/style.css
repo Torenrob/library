@@ -3,12 +3,8 @@ html {
 }
 
 body {
-	display: grid;
-	grid-template-rows: 0.75fr 4fr 0.5fr;
-	grid-template-areas:
-		"header"
-		"mainArea"
-		"footer";
+	display: flex;
+	flex-direction: column;
 	background-color: rgb(3, 36, 63);
 	color: aliceblue;
 	height: 100%;
@@ -16,13 +12,16 @@ body {
 
 header {
 	grid-area: header;
+	position: fixed; 
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	padding-left: 10%;
 	padding-right: 10%;
 	padding-top: 1%;
-	margin-bottom: 2.5%;
 	box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.678);
+	background-color: rgb(3, 36, 63);
+	z-index: 2;
 }
 
 header button {
@@ -31,59 +30,93 @@ header button {
 
 #mainArea {
 	grid-area: mainArea;
-	padding-left: 5%;
-	padding-right: 5%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-content: flex-start;
 }
 
-footer {
-	grid-area: footer;
+#libraryArea {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-content: flex-start;
+	padding-left: 5%;
+	padding-right: 5%;
+	height: 100%;
+	width: 100%;
 }
 
-#addBookForm {
-	position: absolute;
-	height: 300px;
-	width: 450px;
-	background-color: white;
-	opacity: 0.97;
-	z-index: 1;
-	border-radius: 25px;
+footer {
+	grid-area: footer;
+	position: fixed;
+	display: flex;
+	width: 100%;
+	align-content: center;
+	justify-content: center;
+	bottom: 0px;
+	padding-bottom: 30px;
+	padding-top: 15px;
+	height: 25px;
+	background-color: rgb(3, 36, 63);
+	box-shadow: 0px -2px 10px 1px rgba(0, 0, 0, 0.678);
+}
+
+#formInputs {
 	display: flex;
 	flex-direction: column;
 	padding-left: 4%;
 	padding-right: 4%;
 	padding-top: 2.25%;
 	color: black;
-	top: 50px;
+}
+
+#labelCancelBtn  {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#addBookForm {
+	position: fixed;
+	top: 30px;
+	height: 270px;
+	width: 450px;
+	background-color: white;
+	opacity: 0.97;
+	border-radius: 25px;
+	box-shadow: 15px 20px 15px 5px rgba(0, 0, 0, 0.616);
 	visibility: hidden;
+	z-index: 6;
 }
 
 #addBookForm label {
 	color: aliceblue;
 }
 
-#addBookForm > div {
+#formInputs div  {
 	margin-top: 3px;
 	margin-bottom: 10px;
 }
 
-#submitBookInfo {
+#addBookCancelBtn {
+	display: flex;
+	height: 30px;
+	align-items: center;
+}
+
+#submitBookInfoBtn {
 	position: relative;
-	right: 69px;
-	height: 100%;
+	height: 22.5%;
+	border-color: aliceblue;
 	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 25px;
 	background-color: rgb(3, 36, 63);
+	box-shadow: 15px 20px 15px 5px rgba(0, 0, 0, 0.616);
 	color: aliceblue;
 }
 
-#submitBookInfo:hover {
+#submitBookInfoBtn:hover {
 	background-color: rgb(5, 54, 94);
 }
 
@@ -114,8 +147,13 @@ footer {
 	border-radius: 10px;
 	box-shadow: 7px 7px 15px 2px rgba(0, 0, 0, 0.616);
 	padding: 30px;
-	transition: 0.5s;
+	margin-bottom: 55px;
 	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.bookCardTitle {
+	justify-content: center;
 }
 
 .book:hover {
@@ -146,7 +184,7 @@ footer {
 
 .slider {
 	position: absolute;
-	cursor: grab;
+	cursor: pointer;
 	border-radius: 34px;
 	top: 0;
 	left: 0;
@@ -163,29 +201,29 @@ footer {
 	content: "";
 	height: 16.5px;
 	width: 16.5px;
-	left: 2px;
-	bottom: 2px;
+	left: 1.5px;
+	bottom: 1.5px;
 	background-color: rgb(68, 67, 67);
 	-webkit-transition: 0.3s;
 	transition: 0.3s;
 }
 
-#unread {
+.unread {
 	position: absolute;
 	color: rgb(68, 67, 67);
 	font-size: 9px;
-	top: 6.5px;
+	top: 6px;
 	right: 2.5px;
-	cursor: grab;
+	cursor: pointer;
 }
 
-#read {
+.read {
 	position: absolute;
 	font-size: 10px;
 	top: 6px;
 	left: 9px;
 	font-weight: bold;
-	cursor: grab;
+	cursor: pointer;
 }
 
 input:checked + .slider {
@@ -193,11 +231,11 @@ input:checked + .slider {
 	content: "READ";
 }
 
-input:not(:checked) ~ #read {
+input:not(:checked) ~ .read {
 	visibility: hidden;
 }
 
-input:checked ~ #unread {
+input:checked ~ .unread {
 	visibility: hidden;
 }
 
@@ -206,12 +244,12 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-	-webkit-transform: translateX(39.5px);
-	-ms-transform: translateX(39.5px);
-	transform: translateX(39.5px);
+	-webkit-transform: translateX(39.25px);
+	-ms-transform: translateX(39.25px);
+	transform: translateX(39.25px);
 	background-color: white;
 	content: "✓";
-	font-size: 18px;
+	font-size: 16px;
 	color: rgb(13, 179, 13) !important;
 	font-weight: bold;
 	padding-top: 1.25%;
