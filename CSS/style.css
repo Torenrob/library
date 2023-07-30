@@ -284,3 +284,33 @@ input:checked + .slider:before {
 	align-items: center;
 	justify-content: center;
 }
+
+.settingsDots {
+    display: inline-block;
+    position: relative;
+    width: 10px;
+	left: 10px;
+	bottom: 3.75px;
+}
+
+.settingsDots span {
+    position: absolute;
+	display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #ccc;
+	cursor: pointer;
+}
+
+.settingsDots span:nth-child(1) {
+    top: 0;
+}
+
+.settingsDots span:nth-child(2) {
+    top: 8px;
+}
+
+.settingsDots span:nth-child(3) {
+    top: 16px;
+}
