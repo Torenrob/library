@@ -154,6 +154,32 @@ footer {
 
 .bookCardTitle {
 	justify-content: center;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	max-width: 75%;
+	max-height: 130px;
+}
+
+.bookCardTitle::-webkit-scrollbar {
+	width: 3px;
+	margin-left: 0.5px;
+}
+
+.bookCardTitle::-webkit-scrollbar-track {
+	background: none;
+}
+
+.bookCardTitle::-webkit-scrollbar-thumb {
+	background: #8888886f;
+	visibility: hidden;
+}
+
+.bookCardTitle::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.bookCardTitle::-webkit-scrollbar-button {
+	display: none;
 }
 
 .book:hover {
@@ -163,7 +189,6 @@ footer {
 .book > div {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
 .bookInfo {
@@ -172,6 +197,7 @@ footer {
 
 .switch {
 	position: relative;
+	justify-self: flex-end;
 	width: 60px;
 	height: 20px;
 }
