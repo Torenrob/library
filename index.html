@@ -19,62 +19,71 @@
          <button type="submit" id="addBookBtn" class="btn btn-light">Add Book +</button>
       </header>
       <div id="mainArea">
-            <form id="addBookForm">
-               <div id="formInputs">
-                  <div id="labelCancelBtn">
-                     <h4 style="color: rgb(68, 67, 67); display: flex; justify-content: center;">Book Information</h4>
-                     <button type="reset" class="btn btn-danger" id="addBookCancelBtn" ><span>Cancel</span></button>
-                  </div>
-                  <div class="input-group mb-3">
-                     <label class="input-group-text" for="bookTitle">Book Title:</label>
-                     <input required class="form-control" type="text" name="bookTitle" id="bookTitle">
-                  </div>
-                  <div class="input-group mb-3">
-                     <label class="input-group-text" for="authorEntry">Author:</label>
-                     <input required class="form-control" type="text" name="authorEntry" id="authorEntry">
-                  </div>
-                  <div id="pageReadInput">
-                     <div class="input-group mb-3" style="width: 55%;">
-                        <label class="input-group-text" for="pagesEntry">Pages:</label>
-                        <input required class="form-control" type="number" name="pagesEntry" id="pagesEntry">
-                     </div>
-                     <div class="form-check form-check-reverse">
-                        <label for="bookRead" class="form-check-label" style="color: rgb(68, 67, 67);">Already read?</label>
-                        <input type="checkbox" name="bookRead" id="bookRead" class="form-check-input" style="cursor: pointer;">
-                     </div>
-                  </div>
+         <form id="addBookForm">
+            <div id="formInputs">
+               <div id="labelCancelBtn">
+                  <h4 style="color: rgb(68, 67, 67); display: flex; justify-content: center;">Book Information</h4>
+                  <button type="reset" class="btn btn-danger" id="addBookCancelBtn"><span>Cancel</span></button>
                </div>
-               <button type="submit" class="btn btn-light" id="submitBookInfoBtn">Add Book</button>
-            </form>
-            <div id="libraryArea">
-               <div class="book">
-                  <div>
-                     <h3 class="bookCardTitle">The Golden Rule</h3>
-                     <div>
-                        <label class="switch">
-                           <input type="checkbox" class="checkBox">
-                           <span class="slider" style="cursor: pointer;"></span>
-                           <span class="unread" style="cursor: pointer;">UNREAD</span>
-                           <span class="read">READ</span>
-                        </label>
-                        <a href="null" class="settingsDots">
-                              <span></span>
-                              <span></span>
-                              <span></span>
-                        </a>
-                     </div>
+               <div class="input-group mb-3">
+                  <label class="input-group-text" for="bookTitle">Book Title:</label>
+                  <input required class="form-control" type="text" name="bookTitle" id="bookTitle">
+               </div>
+               <div class="input-group mb-3">
+                  <label class="input-group-text" for="authorEntry">Author:</label>
+                  <input required class="form-control" type="text" name="authorEntry" id="authorEntry">
+               </div>
+               <div id="pageReadInput">
+                  <div class="input-group mb-3" style="width: 55%;">
+                     <label class="input-group-text" for="pagesEntry">Pages:</label>
+                     <input required class="form-control" type="number" name="pagesEntry" id="pagesEntry">
                   </div>
-                  <span class="bookInfo">Author: Linnette Springs</span>
-                  <span class="bookInfo">Pages: 2324</span>
+                  <div class="form-check form-check-reverse">
+                     <label for="bookRead" class="form-check-label" style="color: rgb(68, 67, 67);">Already
+                        read?</label>
+                     <input type="checkbox" name="bookRead" id="bookRead" class="form-check-input"
+                        style="cursor: pointer;">
+                  </div>
                </div>
             </div>
-      </div>
-      <footer>
-         <span style="width: 18%; display: flex; align-items: center; justify-content: center;">YourLibrarian &copy 2023 
-            <a href="https://github.com/Torenrob" style="width: 33%; display: flex; align-items: center; text-decoration: none; color: inherit; justify-content: space-between; margin-left: 4px;">TorenRob 
-               <img src="Images/iconmonstr-github-3.svg"> </a>
-         </span>
-      </footer>
+            <button type="submit" class="btn btn-light" id="submitBookInfoBtn">Add Book</button>
+         </form>
+         <div id="libraryArea">
+            <!-- <div class="book">
+               <div>
+                  <h3 class="bookCardTitle">The Golden Rule</h3>
+                  <div class="switchDots">
+                     <label class="switch">
+                        <input type="checkbox" class="checkBox">
+                        <span class="slider" style="cursor: pointer;"></span>
+                        <span class="unread" style="cursor: pointer;">UNREAD</span>
+                        <span class="read">READ</span>
+                     </label>
+                     <div onclick="event.stopPropagation" class="settingsDots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <div class="settingsDropdown">
+                           <span style="color: #555;">Edit Book</span>
+                           <hr style="color: #555;">
+                           <span class="removeBookBtn" style="color: red;">Remove Book</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <span class="bookInfo">Author: Linnette Springs</span>
+               <span class="bookInfo">Pages: 2324</span>
+            </div>
+         </div> -->
+         </div>
+         <footer>
+            <span style="display: flex; align-items: center; justify-content: center;">YourLibrarian &copy
+               2023
+               <a href="https://github.com/Torenrob"
+                  style="width: 27%; display: flex; align-items: center; text-decoration: none; color: inherit; justify-content: space-between; margin-left: 4px;">TorenRob
+                  <img src="Images/iconmonstr-github-3.svg"> </a>
+            </span>
+         </footer>
    </body>
 
 </html>
